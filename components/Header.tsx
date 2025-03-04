@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import UserMenu from "./UserMenu";
 import ThemeToggle from "./ThemeToggle";
+import { checkUser } from "@/lib/checkUser";
 
-const Header = () => {
+const Header = async () => {
+  await checkUser();
   return (
     <header className="container mx-auto">
       <nav className="flex items-center justify-between px-4 py-6">
