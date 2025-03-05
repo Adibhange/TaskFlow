@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ClerkProvider } from "@clerk/nextjs";
+import ClerkTheme from "@/components/ClerkTheme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkTheme
+      
+    >
       <html lang="en" suppressHydrationWarning>
         <body className={`${inter.className} antialiased`}>
           <ThemeProvider
@@ -35,6 +37,6 @@ export default function RootLayout({
           </ThemeProvider>
         </body>
       </html>
-    </ClerkProvider>
+    </ClerkTheme>
   );
 }
